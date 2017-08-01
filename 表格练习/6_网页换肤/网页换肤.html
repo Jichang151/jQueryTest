@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>网页换肤</title>
+        <link href="style.css" rel="stylesheet"/>
+    </head>
+    <body>
+    <div id="container">
+        <ul>
+            <li class="skin0 selected"></li>
+            <li class="skin1"></li>
+            <li class="skin2"></li>
+            <li class="skin3"></li>
+            <li class="skin4"></li>
+            <li class="skin5"></li>
+        </ul>
+        <div id="content">
+            <div class="news">王者荣耀</div>
+            <div class="news">英雄联盟</div>
+        </div>
+    </div>
+    <script src="../../jquery1.12.4.js"></script>
+    <script>
+        $('ul li').on('click',function(){
+           var className = $(this).attr('class');
+            $(this).addClass('selected').siblings().removeClass('selected');
+            $('.news').attr('class','news '+className);//attr既能取值也能赋值
+        });
+    </script>
+    </body>
+</html>
